@@ -5,3 +5,6 @@ dist/
 .env
 instance/
 .vscode/
+.VSCodeCounter/
+trial.py
+ConstructingChemistry/static/compound_images/*.png

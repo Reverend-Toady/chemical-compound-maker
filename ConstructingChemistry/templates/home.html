@@ -1,45 +1,41 @@
 {% extends "base.html" %}{% block title %}Home{% endblock %} {% block content %}
 
 <script src="../static/js/input_buttons.js"></script>
+<link rel="stylesheet" href="../static/css/reaction.css" />
 
 <form method="POST">
   <h3>Enter Reaction in SMILES Notation</h3>
-  <div class="form-group">
+  <div id="reaction-group">
     <div id="reactant-group">
-      <label for="reactant" class="font-weight-bold">Enter Reactants:</label>
-      <button type="button" class="btn btn-secondary btn-sm float-right" id="reactant-button-remove">Remove Reactant</button>
-      <button type="button" class="btn btn-secondary btn-sm float-right mr-1" id="reactant-button-add">Add Reactant</button>
+      <!-- <label for="reactant" class="font-weight-bold">Enter Reactants:</label> -->
       <input
         type="text"
-        class="form-control"
         id="reactant"
         name="reactant-base"
         placeholder="Enter Reactant"
       />
+      <img id="reactant-image" src="#" style="display: none" />
+      <!-- <button type="button" id="reactant-button-add">+</button> -->
     </div>
     <div id="reagent-group">
-      <label for="reagent" class="font-weight-bold">Enter reagents:</label>
-      <button type="button" class="btn btn-secondary btn-sm float-right" id="reagent-button-remove">Remove reagent</button>
-      <button type="button" class="btn btn-secondary btn-sm float-right mr-1" id="reagent-button-add">Add reagent</button>
       <input
         type="text"
-        class="form-control"
         id="reagent"
         name="reagent-base"
         placeholder="Enter Reagent"
       />
+      <img id="reagent-image" src="#" style="display: none" />
+      <div class="arrow">⟶</div>
+      <!-- <button type="button" id="reagent-button-add">+</button> -->
     </div>
     <div id="product-group">
-      <label for="product" class="font-weight-bold">Enter products:</label>
-      <button type="button" class="btn btn-secondary btn-sm float-right" id="product-button-remove">Remove product</button>
-      <button type="button" class="btn btn-secondary btn-sm float-right mr-1" id="product-button-add">Add product</button>
       <input
         type="text"
-        class="form-control"
         id="product"
         name="product-base"
         placeholder="Enter product"
       />
+      <img id="product-image" src="#" style="display: none" />
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>

@@ -1,0 +1,29 @@
+#reaction-group {
+  display: flex;
+  align-items: center;
+}
+
+#reactant-group,
+#product-group {
+  display: flex;
+  align-items: center;
+}
+
+#reactant-group {
+  margin-left: 20px;
+}
+
+#reagent-group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#product-group {
+  margin-right: 20px;
+}
+
+.arrow {
+  font-size: 70px;
+  align-self: center;
+}

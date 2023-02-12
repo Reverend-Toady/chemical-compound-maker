@@ -1,6 +1,6 @@
 from .app import db
 
-class Compound(db.Model):
+class Compound(db.Model): # type: ignore
     cid = db.Column(db.Integer, primary_key= True)
     name = db.Column(db.String(255), unique= True)
     formula = db.Column(db.String(255))

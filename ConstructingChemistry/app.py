@@ -8,7 +8,6 @@ db = SQLAlchemy()
 DB_NAME = "compound_database.db"
 
 def create_app() -> Flask:
-
     app = Flask(__name__)
     app.config["SECRET_KEY"] = os.environ["secret_key"]
     app.config["UPLOAD_FOLDER"] = os.path.join("static", "compound_images") 

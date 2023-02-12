@@ -1,10 +1,7 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, jsonify
 
-import io
-from pickle import dumps as pickle_dumps
 from .models import Compound
-from .app import db
-from .api.process_raw_input import process_raw_input
+from .api.process_raw_input import process_raw_input, save_raw_mol_image
 
 views = Blueprint("views", __name__)
 
@@ -30,3 +27,13 @@ def home():
         #     return redirect(url_for("views.home"))
 
     return render_template("home.html")
+
+@views.route("/get_image", methods= ["POST"])
+def get_image():
+    data = request.get_json()
+    if data:
+        img_name = data["data"]
+        if not save_raw_mol_image(img_name):
+            return {"worked?": "False"}
+        return {"worked?": "True"}
+    return {"worked?": "NotSure"}

@@ -2,16 +2,16 @@ from __future__ import annotations
 from typing import Union, List
 from dataclasses import dataclass
 from PIL.Image import Image
+from rdkit.Chem.rdchem import Atom, Bond
 
 
 @dataclass
 class Compound:
-    cid: int
     name: str
     formula: str
     weight: float
-    atoms: List
-    bonds: List
+    atoms: List[Atom]
+    bonds: List[Bond]
     image: Image
 
     def __repr__(self) -> str:
